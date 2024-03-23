@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 
@@ -25,9 +26,27 @@ public class AssignementG62Application implements CommandLineRunner {
         productRepository.save(new Product(null,"adam",0,50000));
         productRepository.save(new Product(null,"oussama",2000000000,1));
         List<Product> listProd=productRepository.findAll();
-        listProd.forEach(p->{
-            System.out.println(p.toString());
-        });
+//        listProd.forEach(p->{
+//            System.out.println(p.toString());
+//        });
+//        List<Product> p1=productRepository.Consulter();
+//        for(var e :p1)
+//        {
+//            System.out.println(e);
+//        }
+//        System.out.println(productRepository.consulterProd(2));
+//
+        Optional<Product> produitmis = productRepository.findById(3l);
+        produitmis.get().setName("souhail oueld lhkim");
+        produitmis.get().setPrice(-50);
+        produitmis.get().setQuantity(4000000);
+        productRepository.save(produitmis.get());
+                List<Product> p1=productRepository.Consulter();
+        for(var e :p1)
+        {
+            System.out.println(e);
+        }
+
 
     }
 }
