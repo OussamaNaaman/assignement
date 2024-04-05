@@ -41,7 +41,7 @@ public class AssignementG62Application implements CommandLineRunner {
         produitmis.get().setPrice(-50);
         produitmis.get().setQuantity(4000000);
         productRepository.save(produitmis.get());
-                List<Product> p1=productRepository.Consulter();
+                List<Product> p1=productRepository.findAll();
         for(var e :p1)
         {
             System.out.println(e);
