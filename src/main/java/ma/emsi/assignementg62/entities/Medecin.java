@@ -1,17 +1,19 @@
 package ma.emsi.assignementg62.entities;
 
 import jakarta.persistence.*;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+@Getter
+@Setter
+public class Medecin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,8 +22,10 @@ public class Product {
     private String name;
 
     @Column(nullable = false)
-    private double price;
+    private String specialization;
 
     @Column(nullable = false)
-    private int quantity;
+    private String phoneNumber;
+
+
 }
