@@ -26,10 +26,9 @@ public class Patient {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(columnDefinition = "int default 0") // Ajout de la valeur par défaut
+    @Column(columnDefinition = "int default 0")
     private int score;
 
-    // Constructeur par défaut
     public Patient() {
     }
 }
